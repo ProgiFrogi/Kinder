@@ -1,21 +1,18 @@
-<<<<<<< HEAD
-# Kinder
-Tinder for cats (kit on Ukrain)
-=======
-# kinder
+# Kinder - Tinder for Cats
 
-A new Flutter project.
+## Описание проекта
+Данный проект реализован в рамках курса "Разработка на Flutter" в ВШПИ. В рамках этого проекта нам было необходимо реализовать подобие тиндера, но для котов
 
-## Getting Started
+### Реализованные фичи
+- На главном экране отображается случайное изображение котика и название его породы
+- Изображение котика можно свайпнуть или смахнуть влево или вправо
+- Также есть две кнопки: лайк/дизлайк
+- Смахивание, свайп или нажатие на кнопку сменяет котика на нового
+- Если котика лайкнули (лайк или свайп вправо), то на экране увеличивается счетчик
+- Счетчик можно обнулить с помощью кнопки
+- Если нажать на само изображение котика, то открывается новый экран с детальным описанием
+- На экране детального описания отображается то же изображение котика, плюс отображается вся информация про породу
+- Есть пасхалка, что меняет API для котов на другую
+- Для ее активации нужно 5 раз нажать на логотип, тогда счетчик лайков станет равен 999, это значит что пасхалка активировалась. Далее нужно просто свапать изображения котов, пока не случится что-то странное...
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> e688b0d (Initial commit)
