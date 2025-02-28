@@ -28,4 +28,4 @@
 
 ### Ссылка на скачивание
 
-<a href="https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk" target="_blank">APK</a>
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk" target="_blank">APK</a>
