@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
   final VoidCallback toggleTheme;
   final bool isDarkMode;
 
-  HomeScreen({required this.toggleTheme, required this.isDarkMode});
+  const HomeScreen({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -24,13 +24,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final CatApi _catApi = CatApi();
   final CardSwiperController _swiperController = CardSwiperController();
-  List<Map<String, dynamic>> _cats = [];
+  final List<Map<String, dynamic>> _cats = [];
   int _likeCount = 0;
   int _logoTapCount = 0;
   bool _easterEggEnabled = false;
 
   Future<void> _fetchRandomCat() async {
-    final cat;
+    final Map<String, dynamic> cat;
     try {
       if (_easterEggEnabled) {
         final response = await http.get(Uri.parse(
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       await completer.future;
     } catch (e) {
-      print('Ошибка загрузки изображения: $e');
+      
     }
   }
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CatDetailScreen extends StatelessWidget {
   final Map<String, dynamic> cat;
 
-  CatDetailScreen({required this.cat});
+  const CatDetailScreen({super.key, required this.cat});
 
   @override
   Widget build(BuildContext context) {

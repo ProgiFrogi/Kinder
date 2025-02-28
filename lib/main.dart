@@ -6,6 +6,8 @@ void main() {
 }
 
 class CatTinderApp extends StatefulWidget {
+  const CatTinderApp({super.key});
+
   @override
   _CatTinderAppState createState() => _CatTinderAppState();
 }

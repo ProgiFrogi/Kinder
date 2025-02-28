@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DislikeButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  DislikeButton({required this.onPressed});
+  const DislikeButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

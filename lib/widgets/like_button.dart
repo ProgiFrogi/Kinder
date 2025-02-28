@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LikeButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  LikeButton({required this.onPressed});
+  const LikeButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
