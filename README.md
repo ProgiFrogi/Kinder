@@ -16,3 +16,16 @@
 - Для ее активации нужно 5 раз нажать на логотип, тогда счетчик лайков станет равен 999, это значит что пасхалка активировалась. Далее нужно просто свапать изображения котов, пока не случится что-то странное...
 
 
+### Примеры
+#### Светлая тема
+![Alt text](repo_info/images_of_app/main_light.jpg)
+![Alt text](repo_info/images_of_app/swap_light.jpg)
+![Alt text](repo_info/images_of_app/detail_light.jpg)
+#### Темная тема
+![Alt text](repo_info/images_of_app/main_dark.jpg)
+![Alt text](repo_info/images_of_app/swap_dark.jpg)
+![Alt text](repo_info/images_of_app/detail_dark.jpg)
+
+### Ссылка на скачивание
+
+<a href="https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk" target="_blank">APK</a>
