@@ -18,14 +18,14 @@
 
 ### Примеры
 #### Светлая тема
-![Alt text](repo_info/images_of_app/main_light.jpg)
-![Alt text](repo_info/images_of_app/swap_light.jpg)
-![Alt text](repo_info/images_of_app/detail_light.jpg)
+![main_light](repo_info/images_of_app/main_light.jpg)
+![swap_light](repo_info/images_of_app/swap_light.jpg)
+![detail_light](repo_info/images_of_app/detail_light.jpg)
 #### Темная тема
-![Alt text](repo_info/images_of_app/main_dark.jpg)
-![Alt text](repo_info/images_of_app/swap_dark.jpg)
-![Alt text](repo_info/images_of_app/detail_dark.jpg)
+![main_dark](repo_info/images_of_app/main_dark.jpg)
+![swap_dark](repo_info/images_of_app/swap_dark.jpg)
+![detail_dark](repo_info/images_of_app/detail_dark.jpg)
 
 ### Ссылка на скачивание
 
-<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk" target="_blank">APK</a>
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk">APK</a>
