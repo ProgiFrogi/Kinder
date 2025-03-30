@@ -14,6 +14,12 @@
 - На экране детального описания отображается то же изображение котика, плюс отображается вся информация про породу
 - Есть пасхалка, что меняет API для котов на другую
 - Для ее активации нужно 5 раз нажать на логотип, тогда счетчик лайков станет равен 999, это значит что пасхалка активировалась. Далее нужно просто свапать изображения котов, пока не случится что-то странное...
+- Экран списка лайкнутых котиков (хранится в рантайме):
+  - Отображение изображения, породы и даты лайка
+  - Удаление котика из списка
+  - Фильтрация по породе с мгновенным обновлением
+- Обработка ошибок сети с диалогом.
+- Прогресс-бар при загрузке изображений.
 
 
 ### Примеры
@@ -26,6 +32,22 @@
 ![swap_dark](repo_info/images_of_app/swap_dark.jpg)
 ![detail_dark](repo_info/images_of_app/detail_dark.jpg)
 
-### Ссылка на скачивание
+#### Загрузка
+![load_screen](repo_info/images_of_app/load_screen.jpg)
 
-<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/main/apk/kinder.apk">APK</a>
+### Список лайкнутых
+![list](repo_info/images_of_app/list_of_cats.jpg)
+
+### Ошибки
+![list](repo_info/images_of_app/network_error.jpg)
+
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/second_iteration/apk/kinder.apk">APK</a>
+
+## Технические детали
+- Язык: Dart
+- Фреймворк: Flutter
+- Управление состоянием: Cubit (flutter_bloc)
+- Внедрение зависимостей: get_it
+- Форматирование кода: `dart format`
+- Анализ кода: `flutter analyze`
+- Структура: Data, Domain, Presentation
