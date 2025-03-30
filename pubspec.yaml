@@ -38,6 +38,9 @@ dependencies:
   flutter_card_swiper: ^2.0.0
   shared_preferences: ^2.0.0
   flutter_svg: ^1.1.6
+  get_it: ^7.7.0
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -100,11 +103,11 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/main_logo.png"  # Укажи путь к логотипу (512x512 px)
-  adaptive_icon_background: "#FFFFFF"  # Фон для адаптивных иконок Android
+  image_path: "assets/main_logo.png" 
+  adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "assets/foreground.png"
 flutter_native_splash:
-  color: "#FFFFFF"  # Цвет фона
-  image: "assets/load_screen_big.png"  # Изображение сплэша (1024x1024 px)
+  color: "#FFFFFF"
+  image: "assets/load_screen_big.png"
   android: true
   ios: true

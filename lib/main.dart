@@ -1,70 +1,60 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kinder/di/dependency_injection.dart';
+import 'package:kinder/presentation/blocs/theme_cubit.dart';
+import 'package:kinder/presentation/screens/home_screen.dart';
 
 void main() {
-  runApp(CatTinderApp());
+  setupDependencies();
+  runApp(const KinderApp());
 }
 
-class CatTinderApp extends StatefulWidget {
-  const CatTinderApp({super.key});
+class KinderApp extends StatelessWidget {
+  const KinderApp({super.key});
 
-  @override
-  _CatTinderAppState createState() => _CatTinderAppState();
-}
-
-class _CatTinderAppState extends State<CatTinderApp> {
-  bool _isDarkMode = false;
-  
-  void _toggleTheme() {
-    setState(() {
-      _isDarkMode = !_isDarkMode;
-    });
-  }
-  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Cat Tinder',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: Colors.grey[100],
-        appBarTheme: AppBarTheme(
-          elevation: 4,
-          color: Colors.indigo,
-          titleTextStyle: TextStyle(
-            color: Colors.white, 
-            fontSize: 20, 
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        textTheme: TextTheme(
-          titleLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-          bodyMedium: TextStyle(fontSize: 16.0),
-        ),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: Colors.grey[900],
-        appBarTheme: AppBarTheme(
-          elevation: 4,
-          color: Colors.indigo[700],
-          titleTextStyle: TextStyle(
-            color: Colors.white, 
-            fontSize: 20, 
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        textTheme: TextTheme(
-          titleLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-          bodyMedium: TextStyle(fontSize: 16.0),
-        ),
-      ),
-      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      home: HomeScreen(
-        toggleTheme: _toggleTheme,
-        isDarkMode: _isDarkMode,
+    return BlocProvider(
+      create: (_) => ThemeCubit(),
+      child: BlocBuilder<ThemeCubit, bool>(
+        builder: (context, isDarkMode) {
+          return MaterialApp(
+            title: 'Kinder',
+            theme: ThemeData(
+              brightness: Brightness.light,
+              primarySwatch: Colors.indigo,
+              scaffoldBackgroundColor: Colors.grey[100],
+              appBarTheme: const AppBarTheme(
+                elevation: 4,
+                color: Colors.indigo,
+                titleTextStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              primarySwatch: Colors.indigo,
+              scaffoldBackgroundColor: Colors.grey[900],
+              appBarTheme: const AppBarTheme(
+                elevation: 4,
+                color: Colors.indigo,
+                titleTextStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            home: HomeScreen(
+              toggleTheme: () => context.read<ThemeCubit>().toggleTheme(),
+              isDarkMode: isDarkMode,
+            ),
+          );
+        },
       ),
     );
   }
