@@ -44,7 +44,7 @@
 ### Отсутсвие сети
 ![no_interneto_O](repo_info/images_of_app/no_interneto_O.jpg)
 
-<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/second_iteration/apk/kinder.apk">APK</a>
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ProgiFrogi/Kinder/blob/final_iteration/apk/kinder.apk">APK</a>
 
 ## Технические детали
 - Язык: Dart
