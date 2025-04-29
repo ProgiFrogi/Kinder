@@ -11,7 +11,7 @@ class LikedCat {
     required this.breed,
     required this.description,
     required this.likedAt,
-  }) : super();
+  });
 
   factory LikedCat.fromCat(Map<String, dynamic> cat) {
     return LikedCat(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CatCard extends StatelessWidget {
@@ -15,18 +16,16 @@ class CatCard extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Image.network(
-              cat['url'],
+            CachedNetworkImage(
+              imageUrl: cat['url'],
               fit: BoxFit.cover,
-              loadingBuilder: (context, child, loadingProgress) {
-                if (loadingProgress == null) return child;
-                return const Center(child: CircularProgressIndicator());
-              },
-              errorBuilder: (context, error, stackTrace) {
-                return const Center(
-                  child: Icon(Icons.error, color: Colors.red, size: 50),
-                );
-              },
+              placeholder:
+                  (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+              errorWidget:
+                  (context, url, error) => const Center(
+                    child: Icon(Icons.error, color: Colors.red, size: 50),
+                  ),
             ),
             Positioned(
               left: 16,
@@ -52,7 +51,7 @@ class CatCard extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Container(
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 12,

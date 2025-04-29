@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CatDetailScreen extends StatelessWidget {
@@ -7,34 +8,47 @@ class CatDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      // По тапу на экран возвращаемся назад
-      onTap: () {
-        Navigator.pop(context);
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(cat['breeds'][0]['name']),
-        ),
-        body: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(cat['breeds'][0]['name']),
+        backgroundColor: Colors.indigo,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Image.network(
-                    cat['url'],
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+            CachedNetworkImage(
+              imageUrl: cat['url'],
+              width: double.infinity,
+              height: 300,
+              fit: BoxFit.cover,
+              placeholder:
+                  (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) {
+                return const Center(
+                  child: Icon(Icons.error, color: Colors.red, size: 50),
+                );
+              },
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(
-                cat['breeds'][0]['description'],
-                style: Theme.of(context).textTheme.bodyMedium,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    cat['breeds'][0]['name'],
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    cat['breeds'][0]['description'],
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ],
               ),
             ),
           ],

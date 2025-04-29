@@ -1,22 +1,19 @@
-import 'package:equatable/equatable.dart';
-import 'package:kinder/domain/models/liked_cat.dart';
+part of 'liked_cats_cubit.dart';
 
-class LikedCatsState extends Equatable {
+class LikedCatsState {
   final List<LikedCat> likedCats;
   final List<LikedCat> filteredCats;
   final String? selectedBreed;
 
-  const LikedCatsState({
+  LikedCatsState({
     required this.likedCats,
     required this.filteredCats,
     this.selectedBreed,
   });
 
-  factory LikedCatsState.initial() => const LikedCatsState(
-    likedCats: [],
-    filteredCats: [],
-    selectedBreed: null,
-  );
+  factory LikedCatsState.initial() {
+    return LikedCatsState(likedCats: [], filteredCats: [], selectedBreed: null);
+  }
 
   LikedCatsState copyWith({
     List<LikedCat>? likedCats,
@@ -29,7 +26,4 @@ class LikedCatsState extends Equatable {
       selectedBreed: selectedBreed ?? this.selectedBreed,
     );
   }
-
-  @override
-  List<Object?> get props => [likedCats, filteredCats, selectedBreed];
 }
